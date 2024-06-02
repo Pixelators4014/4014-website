@@ -1,4 +1,24 @@
 # Installation
-`bun i`
+```bash
+bun i
+```
+or
+```bash
+npm i
+```
 # Running
-`bun run zola` and  `bun run tailwind`
+```bash
+bun run zola
+```
+and
+```bash
+bun run tailwind
+```
+or
+```bash
+npm run zola
+```
+and
+```bash
+npm run tailwind
+```
