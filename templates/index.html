@@ -4,10 +4,21 @@
     <div
         class="absolute inset-0 flex flex-col items-center justify-center space-y-96"
     >
-        <div
-            class="text-9xl max-lg:text-8xl max-md:text-7xl max-sm:text-6xl font-extrabold font-mona text-[#e12f35]"
-        >
-            Pixelators
+        <div class="relative">
+            <div
+                class="text-9xl max-lg:text-8xl max-md:text-7xl max-sm:text-6xl font-extrabold font-mona text-[#e12f35] relative p-5 z-20"
+            >
+                Pixelators
+            </div>
+            <div
+                class="absolute inset-0 grid grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr]"
+            >
+                {% for i in range(end=897) %}
+                <div
+                    class="aspect-square z-10 bg-[#9e9f9f] pixel opacity-0"
+                ></div>
+                {% endfor %}
+            </div>
         </div>
         <div class="flex space-x-20">
             <a
@@ -25,5 +36,11 @@
         </div>
     </div>
 </div>
+<script>
+    var pix = document.getElementsByClassName("pixel");
 
+    for (var i = 0; i < pix.length; i++) {
+        pix[i].style.animationDelay = Math.ceil(Math.random() * 5000) + "ms";
+    }
+</script>
 {% endblock content %}

@@ -18,3 +18,18 @@
 .font-mona {
     font-family: "Mona";
 }
+.pixel {
+    animation: noiseAnimation 2s infinite;
+}
+
+@keyframes noiseAnimation {
+    0%,
+    25%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
