@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
 .pixelated {
     image-rendering: pixelated;
 }

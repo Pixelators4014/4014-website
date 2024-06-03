@@ -560,8 +560,14 @@
   .static\/app {
     position: static;
   }
+  .sticky {
+    position: sticky;
+  }
   .inset-0 {
     inset: var(--spacing-0, 0px);
+  }
+  .top-0 {
+    top: var(--spacing-0, 0px);
   }
   .m-1 {
     margin: var(--spacing-1, 0.25rem);
@@ -629,8 +635,18 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-white {
+    border-color: var(--color-white, #fff);
+  }
   .bg-\[\#ffffff\] {
     background-color: #ffffff;
+  }
+  .bg-\[\#ffffff\]\/95 {
+    background-color: color-mix(in srgb, #ffffff 95%, transparent);
   }
   .bg-gradient-to-br {
     background-image: linear-gradient(to bottom right, var(--tw-gradient-stops,));
@@ -690,6 +706,15 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .backdrop-blur-sm {
+    --tw-backdrop-blur: blur(var(--blur-sm, 4px));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
   .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -697,28 +722,6 @@
   }
   .duration-300 {
     transition-duration: 300ms;
-  }
-  .group-hover\:shadow-2xl {
-    &:is(:where(.group):hover *) {
-      --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-      --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .group-hover\:shadow-xl {
-    &:is(:where(.group):hover *) {
-      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-      0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-      0 8px 10px -6px var(--tw-shadow-color);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .group-hover\:shadow-red-100 {
-    &:is(:where(.group):hover *) {
-      --tw-shadow-color: var(--color-red-100, #fee2e2);
-      --tw-shadow: var(--tw-shadow-colored);
-    }
   }
   .group-hover\:blur-\[8px\] {
     &:is(:where(.group):hover *) {
@@ -731,15 +734,6 @@
       color: #e12f35;
     }
   }
-  .hover\:shadow-xl {
-    &:hover {
-      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-      0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-      0 8px 10px -6px var(--tw-shadow-color);
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
   .max-sm\:hidden {
     @media (width < 40rem) {
       display: none;
@@ -750,15 +744,30 @@
       display: inline;
     }
   }
+  .dark\:border-black {
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-black, #000);
+    }
+  }
   .dark\:bg-\[\#1b1b1f\] {
     @media (prefers-color-scheme: dark) {
       background-color: #1b1b1f;
+    }
+  }
+  .dark\:bg-\[\#1b1b1f\]\/95 {
+    @media (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, #1b1b1f 95%, transparent);
     }
   }
   .dark\:text-\[\#fffff5\]\/85 {
     @media (prefers-color-scheme: dark) {
       color: color-mix(in srgb, #fffff5 85%, transparent);
     }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
   }
 }
 .pixelated {
@@ -792,18 +801,15 @@
       --tw-opacity:  ;
       --tw-saturate:  ;
       --tw-sepia:  ;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-colored: 0 0 #0000;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-colored: 0 0 #0000;
-      --tw-ring-color:  ;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color:  ;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset:  ;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-backdrop-blur:  ;
+      --tw-backdrop-brightness:  ;
+      --tw-backdrop-contrast:  ;
+      --tw-backdrop-grayscale:  ;
+      --tw-backdrop-hue-rotate:  ;
+      --tw-backdrop-invert:  ;
+      --tw-backdrop-opacity:  ;
+      --tw-backdrop-saturate:  ;
+      --tw-backdrop-sepia:  ;
     }
   }
 }
@@ -947,60 +953,39 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-colored {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-colored {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-color {
+@property --tw-backdrop-blur {
   syntax: "*";
   inherits: false;
 }
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
+@property --tw-backdrop-brightness {
   syntax: "*";
   inherits: false;
 }
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
+@property --tw-backdrop-contrast {
   syntax: "*";
   inherits: false;
 }
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
+@property --tw-backdrop-grayscale {
   syntax: "*";
   inherits: false;
-  initial-value: #fff;
 }
-@property --tw-ring-offset-shadow {
+@property --tw-backdrop-hue-rotate {
   syntax: "*";
   inherits: false;
-  initial-value: 0 0 #0000;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
 }
