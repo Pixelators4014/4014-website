@@ -1,12 +1,10 @@
 {% extends "base.html" %} {% block content %}
 <div class="relative h-[calc(100vh-65px)]">
     <img src="landing.jpg" class="h-full w-full object-cover" />
-    <div
-        class="absolute inset-0 flex flex-col items-center justify-center space-y-96"
-    >
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
         <div class="relative">
             <div
-                class="text-9xl max-lg:text-8xl max-md:text-7xl max-sm:text-6xl font-extrabold font-mona text-[#e12f35] relative p-5 z-20"
+                class="text-9xl max-lg:text-8xl max-md:text-7xl max-sm:text-6xl font-extrabold font-mona relative p-5 z-20 text-gray-50/90"
             >
                 Pixelators
             </div>
@@ -16,21 +14,27 @@
             >
                 {% for i in range(end=966) %}
                 <div
-                    class="aspect-square z-10 bg-[#9e9f9f] pixel opacity-0"
+                    class="aspect-square z-10 bg-[#9e9f9f] pixel opacity-0 transition-all"
                 ></div>
                 {% endfor %}
             </div>
         </div>
+        <div
+            class="text-[#e12f35] font-semibold text-4xl max-lg:text-3xl max-md:text-2xl max-sm:text-xl flex flex-col items-center mt-8 mb-40"
+        >
+            <div><i>FIRST</i> ROBOTICS</div>
+            <div>COMPETITION TEAM 4014</div>
+        </div>
         <div class="flex space-x-20">
             <a
                 href="/"
-                class="bg-[#e12f35] p-3 rounded-sm font-medium shadow-md"
+                class="hover:bg-[#e12f35] bg-[#b30f1c] p-3 rounded-sm font-medium transition-all"
             >
                 Join Our Team
             </a>
             <a
                 href="/"
-                class="bg-[#e12f35] p-3 rounded-sm font-medium shadow-md"
+                class="hover:bg-[#e12f35] bg-[#b30f1c] p-3 rounded-sm font-medium transition-all"
             >
                 Donate
             </a>
