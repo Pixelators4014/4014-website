@@ -19,7 +19,7 @@
     font-family: "Mona";
 }
 .pixel {
-    animation: noiseAnimation 2s infinite;
+    animation: noiseAnimation 5s infinite;
 }
 
 @keyframes noiseAnimation {
@@ -30,6 +30,6 @@
     }
 
     50% {
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }

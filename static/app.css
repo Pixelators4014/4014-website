@@ -823,16 +823,6 @@
       color: #e12f35;
     }
   }
-  .hover\:text-\[\#e12f35\]\/0 {
-    &:hover {
-      color: color-mix(in srgb, #e12f35 0%, transparent);
-    }
-  }
-  .hover\:text-\[\#e12f35\]\/100 {
-    &:hover {
-      color: color-mix(in srgb, #e12f35 100%, transparent);
-    }
-  }
   .max-lg\:text-8xl {
     @media (width < 64rem) {
       font-size: var(--font-size-8xl, 6rem);
@@ -908,14 +898,14 @@
   font-family: "Mona";
 }
 .pixel {
-  animation: noiseAnimation 2s infinite;
+  animation: noiseAnimation 5s infinite;
 }
 @keyframes noiseAnimation {
   0%, 25%, 100% {
     opacity: 0;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }
 @supports (-moz-orient: inline) {
