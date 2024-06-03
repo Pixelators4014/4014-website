@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="description" content="Webpage description goes here" />
+        <meta charset="utf-8" />
+        <title>Pixelators</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Alistair Keiller" />
+        <link rel="stylesheet" href="app.css" />
+    </head>
+
+    <body
+        class="bg-[#ffffff] dark:bg-[#1b1b1f] text-[#3c3c43] dark:text-[#fffff5]/85"
+    >
+        {% include "components/nav.html" ignore missing -%} {% block content %}
+        {% endblock %}
+    </body>
+</html>
