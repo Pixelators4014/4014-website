@@ -9,3 +9,12 @@
 .pixelated {
     image-rendering: pixelated;
 }
+
+@font-face {
+    font-family: "Mona";
+    src: url("Mona.ttf");
+}
+
+.font-mona {
+    font-family: "Mona";
+}
